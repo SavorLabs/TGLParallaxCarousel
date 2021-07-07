@@ -135,7 +135,7 @@ open class TGLParallaxCarousel: UIView {
             
     // MARK: - view lifecycle
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
         setupGestures()
