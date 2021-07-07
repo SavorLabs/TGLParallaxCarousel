@@ -151,7 +151,7 @@ open class TGLParallaxCarousel: UIView {
     }
     
     private func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Swift.type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             return UIView()
