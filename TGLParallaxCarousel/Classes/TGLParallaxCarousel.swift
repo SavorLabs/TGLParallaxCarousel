@@ -31,7 +31,7 @@ open class TGLParallaxCarouselItem: UIView {
 }
 
 @IBDesignable
-final open class TGLParallaxCarousel: UIView {
+open class TGLParallaxCarousel: UIView {
     
     // MARK: - outlets
     @IBOutlet private weak var mainView: UIView!
