@@ -31,7 +31,7 @@ open class TGLParallaxCarouselItem: UIView {
 }
 
 @IBDesignable
-final open class TGLParallaxCarousel: UIView {
+open class TGLParallaxCarousel: UIView {
     
     // MARK: - outlets
     @IBOutlet private weak var mainView: UIView!
@@ -135,7 +135,7 @@ final open class TGLParallaxCarousel: UIView {
             
     // MARK: - view lifecycle
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
         setupGestures()
@@ -151,7 +151,8 @@ final open class TGLParallaxCarousel: UIView {
     }
     
     private func loadViewFromNib() -> UIView {
-        let nib = UINib(nibName: nibName, bundle: Bundle.main)
+        let bundle = Bundle(for: Swift.type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             return UIView()
         }
